@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Web Server</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+    th{ 
+        color: #0f0f0f;
+            }
+    </style>
+   
+
+
+    <script>
+        //create function and use ajax to load json data using get methd
+        function loadData() {
+            $.ajax({
+                url: "/data",
+                dataType: "json",
+                method: 'GET',
+                success: function(data) {
+                    $('#data-list').html('');
+                    data.forEach(function(item) {
+                        const listItem = `<li>Id: ${item.id}, Name: ${item.name}, Model: ${item.model}, Year: ${item.year}</li>`;
+                        $('#data-list').append(listItem);
+                    })
+                },
+                error: function(error) {
+                    console.log(error.status);
+                }
+            })
+        }
+    </script>
+</head>
+<body>    
+    <h1>Vehicle Inventory List</h1>
+    <!--create the button-->
+    <button type="button" class="btn btn-success" onClick="loadData()">Display Data</button>
+    <ul id="data-list">
+    </ul> 
+</body>
+</html>

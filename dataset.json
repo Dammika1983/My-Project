@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Toyota",
+      "model": "Corolla",
+      "year": "2016"
+    },
+    {
+      "id": 1,
+      "name": "Mitsubishi",
+      "model": "Outlander",
+      "year": "2022"
+    },
+    {
+      "id": 1,
+      "name": "Toyota",
+      "model": "Highlander",
+      "year": "2018"
+    },
+    {
+      "id": 1,
+      "name": "Honda",
+      "model": "Pilot",
+      "year": "2019"
+    }
+  ]
